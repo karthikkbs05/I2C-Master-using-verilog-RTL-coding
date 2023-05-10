@@ -7,8 +7,8 @@
 
 module i2c_master(
     inout sda,
-    output scl,
-    input rw,clk100mhz,res,
+    output scl,clk2mhz_dummy,
+    input clk100mhz,res,
     input [7:0]data_to_send, addr_to_send  // contains 5 bit slave address and 2 bit dummy and last bit says the read/write
 );
     
@@ -40,15 +40,17 @@ module i2c_master(
    
      always @(posedge clk100mhz)
      begin
+     count <= count + 1;
      if(count>=0 && count<=24)
-       clk2mhz <=1;
-     else 
        clk2mhz <=0;
+     else 
+       clk2mhz <=1;
      
      if(count ==49)
        count <=0;    
      end
      
+     assign clk2mhz_dummy = clk2mhz;
      
      always@(posedge clk2mhz or posedge res)
      begin
@@ -177,7 +179,7 @@ module i2c_master(
                 if(count_ack_wait < 0)
                  begin
                   if(sda == 0)
-                  state <= stop;                      //sda made high in tb
+                  state <= stop_init;                      //sda made high in tb
                   else
                   state <= data_send_init;
                  end
