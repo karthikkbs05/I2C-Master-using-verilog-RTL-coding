@@ -29,13 +29,14 @@ module i2c_master_tb;
     
     initial
     begin
-    #5 res =0; 
+    #250 res =0; 
     data_to_send = 8'b0101_0101;
     addr_to_send = 8'b1001_1001;
     
-    #150 sda_in = 0;
-    #60 sda_in = 1'bZ;
-    #100 sda_in = 0;
-    #200 $finish;
+    #7500 sda_in = 0;
+    #3000 sda_in = 1'bZ;
+    #5000 sda_in = 0;
+    #15000 $finish;
     end
 endmodule
+
