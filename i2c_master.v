@@ -101,7 +101,7 @@ module i2c_master(
                     if(bit_count < 0)
                      begin
                       //scl_toggle <= 0;
-                      bit_count = 8;
+                      bit_count <= 8;
                       state <= slave_ack_init;
                      end
                     else
