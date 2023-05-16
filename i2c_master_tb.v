@@ -8,14 +8,14 @@
 module i2c_master_tb;
     wire sda;
     wire scl;
-    wire clk2mhz_dummy;
+    wire clk2mhz_dummy,rw;
     reg clk100mhz,res;
     reg [7:0]data_to_send, addr_to_send;
     
     reg sda_in;
     
     i2c_master dut(.sda(sda),.scl(scl),.clk100mhz(clk100mhz),.res(res),
-                   .data_to_send(data_to_send),.addr_to_send(addr_to_send),.clk2mhz_dummy(clk2mhz_dummy));
+                   .data_to_send(data_to_send),.addr_to_send(addr_to_send),.clk2mhz_dummy(clk2mhz_dummy),.rw(rw));
     
     assign sda = sda_in;
     
@@ -31,12 +31,11 @@ module i2c_master_tb;
     begin
     #250 res =0; 
     data_to_send = 8'b0101_0101;
-    addr_to_send = 8'b1001_1001;
+    addr_to_send = 8'b1001_1000;
     
     #7500 sda_in = 0;
     #3000 sda_in = 1'bZ;
-    #5000 sda_in = 0;
-    #15000 $finish;
+    #7250 sda_in = 0;
+    #3000 sda_in = 1'bZ;
     end
 endmodule
-
