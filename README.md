@@ -20,10 +20,11 @@ The below digram shows the connection between a single master and multiple slave
 <img width="544" alt="image" src="https://github.com/karthikkbs05/I2C-Master-using-verilog-RTL-coding/assets/129792064/27caebf6-ddd4-4048-882a-52579fee5792">
 
 ## Timing Diagram of the protocol
-The below image shows the timimg diagram of the working of the protocol.
+- The below image shows the timimg diagram of the working of the protocol.
 
-<img width="840" alt="image" src="https://github.com/karthikkbs05/I2C-Master-using-verilog-RTL-coding/assets/129792064/f72580d8-49e9-438a-84a3-509add709725">
+  <img width="840" alt="image" src="https://github.com/karthikkbs05/I2C-Master-using-verilog-RTL-coding/assets/129792064/f72580d8-49e9-438a-84a3-509add709725">
 
+- To understand more about the working of the I2C communication protocol. Click [here](https://www.youtube.com/watch?v=CAvawEcxoPU).
 ## Design using verilog RTL
 - [i2c_master.v](i2c_master.v) : Design module.
 - [i2c_master_tb.v](i2c_master_tb.v) : Testbench module.
