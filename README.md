@@ -33,7 +33,7 @@ The below image shows the timimg diagram of the working of the protocol.
      <img width="533" alt="image" src="https://github.com/karthikkbs05/I2C-Master-using-verilog-RTL-coding/assets/129792064/cb4f71db-1940-42b3-b6e4-0ec092d2f443">
 
 ## Simulation Output 
-Simulation is done using xilinx vivado. The simulation results are shown below :
+Simulation is done using Xilinx Vivado. The simulation results are shown below :
 
 
 <img width="749" alt="image" src="https://github.com/karthikkbs05/I2C-Master-using-verilog-RTL-coding/assets/129792064/bae44f94-339b-42f9-bfaa-c48cb3669c32">
